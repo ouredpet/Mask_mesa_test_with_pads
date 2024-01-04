@@ -14,9 +14,14 @@ def build_rectangle( layout, cell_name, layer_name, W, H, x0, y0):
     rect_region = mpa.build_rectangle_region( W, H, x0, y0)
     mpa.insert_region( layout, cell_name, layer_name, rect_region)
 
-def build_rectangle_xy( layout, cell_name, layer_name, W, H, x0, y0):
+def build_rectangle_xy( layout, cell_name, layer_name, x0, y0, x1, y1):
 
-    rect_region = mpa.build_rectangle_region_xy( W, H, x0, y0)
+    rect_region = mpa.build_rectangle_region_xy( x0, y0, x1, y1)
+    mpa.insert_region( layout, cell_name, layer_name, rect_region)
+
+def build_triangle_xy( layout, cell_name, layer_name, x0, y0, x1, y1, x2, y2):
+
+    rect_region = mpa.build_triangle_region_xy( x0, y0, x1, y1, x2, y2)
     mpa.insert_region( layout, cell_name, layer_name, rect_region)
 
 def build_rectangle_with_rhole( layout, cell_name, layer_name, W, H, x0, y0, Wh, Hh, x0h, y0h):

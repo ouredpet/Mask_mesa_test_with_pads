@@ -98,6 +98,16 @@ def build_rectangle_region_xy( x0, y0, x1, y1):
     rect_region.insert( pya.Box( x0, y0, x1, y1))
     return rect_region
 
+def build_triangle_region_xy( x0, y0, x1, y1, x2, y2):
+    rect_region = pya.Region()
+    x0, y0, x1, y1, x2, y2 = base_units( ( x0, y0, x1, y1, x2, y2))
+    points = []
+    points.append(pya.Point( x0, y0))
+    points.append(pya.Point( x1, y1))
+    points.append(pya.Point( x2, y2))
+    rect_region.insert( pya.SimplePolygon(points))
+    return rect_region
+
 def build_arc_region(x, y, radius, angle1, angle2):
 
     arc_region = pya.Region()
